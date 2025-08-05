@@ -19,7 +19,7 @@ Este repositorio contiene:
 │   └── ...
 ├── Parciales/               # Exámenes resueltos (si los hay)
 ├── Proyectos/               # Proyectos integradores (si aplica)
-└── extras/                  # Material complementario (libros, papers, etc.)
+└── misc/                  # Material complementario (libros, papers, etc.)
 ```
 
 ## 📝 Requisitos  
