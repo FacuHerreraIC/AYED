@@ -49,8 +49,5 @@ Este material es de libre acceso para fines educativos. Si usas este repositorio
 ---
 
 ### 📌 Notas adicionales  
-- Si el repositorio es personal (no oficial), acláralo.  
-- Actualiza los enlaces según corresponda.  
-- Incluye un **ejemplo de compilación** si es necesario (ej: `g++ -std=c++11 main.cpp -o programa`).  
-
+- El repo es NO OFICIAL, es de un alumno, el del profe oficial es https://github.com/pablo-gomez-unc/AYED2025-UNC
 ¡Espero que te sea útil! 🚀
