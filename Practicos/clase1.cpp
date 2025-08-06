@@ -8,6 +8,7 @@
 using namespace std;
 
 void swap(int &a,int &b);
+void impre(int *, int);
 
 int main(){
     int x,y;
@@ -26,7 +27,15 @@ int main(){
     swap(x,y);
     cout <<"\n x = "<<x;
     cout <<"\n y = "<<y;
+    int v[x] = {5,-2,6,8,4};
+    impre(v,x);
 }
+void impre(int px[], int  N) {
+    for (int i=0;i<N;i++) {
+        cout <<px[i]<<" ";
+    }
+}
+
 //pasaje por referencia
 void swap(int &a,int &b){
     int c;
