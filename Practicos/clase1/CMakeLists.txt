@@ -1,0 +1,1 @@
+add_executable(clases Clase2Parte2.cpp)
