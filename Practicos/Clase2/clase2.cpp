@@ -15,8 +15,6 @@ struct Persona {
     Persona &operator=(Persona * persona);
 };
 
-struct
-
 struct PersonaConst {
     int edad;
     std::string nombre;
@@ -30,7 +28,7 @@ struct PersonaConst {
 
 int main() {
     // Creación correcta de Personas
-    Persona p(0, "");  // Usando el constructor con parámetros
+    Persona p( 0, "");  // Usando el constructor con parámetros
     std::cout << p.edad << std::endl;
     std::cout << p.nombre << std::endl;
 

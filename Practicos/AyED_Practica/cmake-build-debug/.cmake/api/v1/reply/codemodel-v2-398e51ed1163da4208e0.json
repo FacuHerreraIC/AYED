@@ -1,0 +1,159 @@
+{
+	"configurations" : 
+	[
+		{
+			"directories" : 
+			[
+				{
+					"build" : ".",
+					"jsonFile" : "directory-.-Debug-f5ebdc15457944623624.json",
+					"minimumCMakeVersion" : 
+					{
+						"string" : "3.10"
+					},
+					"projectIndex" : 0,
+					"source" : ".",
+					"targetIndexes" : 
+					[
+						0,
+						1,
+						2,
+						3,
+						4,
+						5,
+						6,
+						7,
+						8,
+						9,
+						10,
+						11
+					]
+				}
+			],
+			"name" : "Debug",
+			"projects" : 
+			[
+				{
+					"directoryIndexes" : 
+					[
+						0
+					],
+					"name" : "AyED_Practica",
+					"targetIndexes" : 
+					[
+						0,
+						1,
+						2,
+						3,
+						4,
+						5,
+						6,
+						7,
+						8,
+						9,
+						10,
+						11
+					]
+				}
+			],
+			"targets" : 
+			[
+				{
+					"directoryIndex" : 0,
+					"id" : "aritmetica_punteros::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-aritmetica_punteros-Debug-a60775116ca885b6aade.json",
+					"name" : "aritmetica_punteros",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "cola::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-cola-Debug-d0481ebee45f9a8b8dbc.json",
+					"name" : "cola",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "complejidad::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-complejidad-Debug-be98664e69677f30e224.json",
+					"name" : "complejidad",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "conceptos_basicos::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-conceptos_basicos-Debug-07550c621624b5188923.json",
+					"name" : "conceptos_basicos",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "constructores::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-constructores-Debug-865ac5b808c977323189.json",
+					"name" : "constructores",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "herencia::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-herencia-Debug-58a193c58f1cc1d82b4f.json",
+					"name" : "herencia",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "laboratorio::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-laboratorio-Debug-af8d28bccd9cbb3169de.json",
+					"name" : "laboratorio",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "lista::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-lista-Debug-9524b8c273c21db51eb7.json",
+					"name" : "lista",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "memoria_dinamica::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-memoria_dinamica-Debug-1429771868e342ccc9dd.json",
+					"name" : "memoria_dinamica",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "paso_parametros::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-paso_parametros-Debug-b3ad688948742fe59af3.json",
+					"name" : "paso_parametros",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "pila::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-pila-Debug-d18a76d5d795f4ffc893.json",
+					"name" : "pila",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "punteros_basicos::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-punteros_basicos-Debug-1dd5fad2dad55c482c0c.json",
+					"name" : "punteros_basicos",
+					"projectIndex" : 0
+				}
+			]
+		}
+	],
+	"kind" : "codemodel",
+	"paths" : 
+	{
+		"build" : "/home/facuh/Documents/Alumno/IngComputacion/AYED/Practicos/AyED_Practica/cmake-build-debug",
+		"source" : "/home/facuh/Documents/Alumno/IngComputacion/AYED/Practicos/AyED_Practica"
+	},
+	"version" : 
+	{
+		"major" : 2,
+		"minor" : 7
+	}
+}

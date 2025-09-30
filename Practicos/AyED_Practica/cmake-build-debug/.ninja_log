@@ -1,0 +1,10 @@
+# ninja log v6
+363	480	1759000592445415332	punteros_basicos	c28afa60b7827905
+1	363	1759000592086412971	CMakeFiles/punteros_basicos.dir/01_Punteros/punteros_basicos.cpp.o	f9fda5f7f214b2d4
+448	547	1759000581616344833	paso_parametros	2f62d6c02ecfa024
+0	448	1759000581169341952	CMakeFiles/paso_parametros.dir/01_Punteros/paso_parametros.cpp.o	3cba91e10f443a9d
+293	358	1759000572664287617	laboratorio	209f68d0abf1d87b
+0	292	1759000572371285760	CMakeFiles/laboratorio.dir/00_Laboratorio/pruebas_rapidas.cpp.o	d50a800c60c7a9ce
+1	36	1759002096938444797	build.ninja	7825f0709b0d0838
+1	345	1759079614403900741	CMakeFiles/laboratorio.dir/00_Laboratorio/pruebas_rapidas.cpp.o	d50a800c60c7a9ce
+346	420	1759079614747903868	laboratorio	209f68d0abf1d87b

@@ -1,0 +1,3 @@
+/home/facuh/Documents/Alumno/IngComputacion/AYED/Practicos/Clase2/cmake-build-debug/CMakeFiles/clase2.dir
+/home/facuh/Documents/Alumno/IngComputacion/AYED/Practicos/Clase2/cmake-build-debug/CMakeFiles/edit_cache.dir
+/home/facuh/Documents/Alumno/IngComputacion/AYED/Practicos/Clase2/cmake-build-debug/CMakeFiles/rebuild_cache.dir

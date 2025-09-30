@@ -1,0 +1,14 @@
+/home/facuh/Documents/Alumno/IngComputacion/AYED/Practicos/AyED_Practica/cmake-build-debug/CMakeFiles/laboratorio.dir
+/home/facuh/Documents/Alumno/IngComputacion/AYED/Practicos/AyED_Practica/cmake-build-debug/CMakeFiles/punteros_basicos.dir
+/home/facuh/Documents/Alumno/IngComputacion/AYED/Practicos/AyED_Practica/cmake-build-debug/CMakeFiles/paso_parametros.dir
+/home/facuh/Documents/Alumno/IngComputacion/AYED/Practicos/AyED_Practica/cmake-build-debug/CMakeFiles/memoria_dinamica.dir
+/home/facuh/Documents/Alumno/IngComputacion/AYED/Practicos/AyED_Practica/cmake-build-debug/CMakeFiles/aritmetica_punteros.dir
+/home/facuh/Documents/Alumno/IngComputacion/AYED/Practicos/AyED_Practica/cmake-build-debug/CMakeFiles/conceptos_basicos.dir
+/home/facuh/Documents/Alumno/IngComputacion/AYED/Practicos/AyED_Practica/cmake-build-debug/CMakeFiles/constructores.dir
+/home/facuh/Documents/Alumno/IngComputacion/AYED/Practicos/AyED_Practica/cmake-build-debug/CMakeFiles/herencia.dir
+/home/facuh/Documents/Alumno/IngComputacion/AYED/Practicos/AyED_Practica/cmake-build-debug/CMakeFiles/cola.dir
+/home/facuh/Documents/Alumno/IngComputacion/AYED/Practicos/AyED_Practica/cmake-build-debug/CMakeFiles/lista.dir
+/home/facuh/Documents/Alumno/IngComputacion/AYED/Practicos/AyED_Practica/cmake-build-debug/CMakeFiles/pila.dir
+/home/facuh/Documents/Alumno/IngComputacion/AYED/Practicos/AyED_Practica/cmake-build-debug/CMakeFiles/complejidad.dir
+/home/facuh/Documents/Alumno/IngComputacion/AYED/Practicos/AyED_Practica/cmake-build-debug/CMakeFiles/edit_cache.dir
+/home/facuh/Documents/Alumno/IngComputacion/AYED/Practicos/AyED_Practica/cmake-build-debug/CMakeFiles/rebuild_cache.dir
