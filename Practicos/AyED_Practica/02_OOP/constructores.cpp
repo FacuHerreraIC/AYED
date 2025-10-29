@@ -3,6 +3,7 @@
 //
 #include <iostream>
 #include <string>
+#include <cmath>
 using namespace std;
 
 // ===== UNIDAD 2.4: CONSTRUCTORES =====
@@ -80,13 +81,13 @@ public:
         }
     }
 
-    // Método para mostrar información
+    // Metodo para mostrar información
     void mostrarInfo() const {
         cout << "Vehículo: " << marca << " " << modelo
              << " (" << año << ") - $" << precio << endl;
     }
 
-    // Método para calcular depreciación
+    // Metodo para calcular depreciación
     double calcularValorActual(int añoActual = 2024) const {
         int antigüedad = añoActual - año;
         double depreciacion = antigüedad * 0.1; // 10% por año
