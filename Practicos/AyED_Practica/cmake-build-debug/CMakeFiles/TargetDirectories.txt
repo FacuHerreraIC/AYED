@@ -10,5 +10,6 @@
 /home/facuh/Documents/Alumno/IngComputacion/AYED/Practicos/AyED_Practica/cmake-build-debug/CMakeFiles/lista.dir
 /home/facuh/Documents/Alumno/IngComputacion/AYED/Practicos/AyED_Practica/cmake-build-debug/CMakeFiles/pila.dir
 /home/facuh/Documents/Alumno/IngComputacion/AYED/Practicos/AyED_Practica/cmake-build-debug/CMakeFiles/complejidad.dir
+/home/facuh/Documents/Alumno/IngComputacion/AYED/Practicos/AyED_Practica/cmake-build-debug/CMakeFiles/ncuadrado.dir
 /home/facuh/Documents/Alumno/IngComputacion/AYED/Practicos/AyED_Practica/cmake-build-debug/CMakeFiles/edit_cache.dir
 /home/facuh/Documents/Alumno/IngComputacion/AYED/Practicos/AyED_Practica/cmake-build-debug/CMakeFiles/rebuild_cache.dir

@@ -20,3 +20,6 @@ add_executable(lista 03_Estructuras/lista_enlazada.cpp)
 add_executable(pila 03_Estructuras/pila.cpp)
 # Complejidad Algoritmica
 add_executable(complejidad 04_Complejidad/ejemplos_complejidad.cpp)
+# Algoritmos De Ordenamiento
+add_executable(ncuadrado 05_AlgoritmosDeOrdenamiento/ncuadrado.cpp)
+

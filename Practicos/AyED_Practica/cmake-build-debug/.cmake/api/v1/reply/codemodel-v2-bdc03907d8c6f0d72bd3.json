@@ -26,7 +26,8 @@
 						8,
 						9,
 						10,
-						11
+						11,
+						12
 					]
 				}
 			],
@@ -52,7 +53,8 @@
 						8,
 						9,
 						10,
-						11
+						11,
+						12
 					]
 				}
 			],
@@ -119,6 +121,13 @@
 					"id" : "memoria_dinamica::@6890427a1f51a3e7e1df",
 					"jsonFile" : "target-memoria_dinamica-Debug-1429771868e342ccc9dd.json",
 					"name" : "memoria_dinamica",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "ncuadrado::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-ncuadrado-Debug-66f2b2b58d03bd74b2be.json",
+					"name" : "ncuadrado",
 					"projectIndex" : 0
 				},
 				{

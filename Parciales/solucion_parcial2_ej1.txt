@@ -1,0 +1,176 @@
+#include <iostream>
+using namespace std;
+
+class RegistroSensoresABB {
+private:
+    // Estructura del nodo del árbol
+    struct Nodo {
+        int temperatura;
+        Nodo* izq;
+        Nodo* der;
+        
+        Nodo(int temp) : temperatura(temp), izq(nullptr), der(nullptr) {}
+    };
+    
+    Nodo* raiz;
+    
+    // Método auxiliar recursivo para insertar
+    Nodo* insertarRec(Nodo* nodo, int temperatura) {
+        // Caso base: si el nodo es nullptr, crear nuevo nodo
+        if (nodo == nullptr) {
+            return new Nodo(temperatura);
+        }
+        
+        // Insertar en el subárbol izquierdo o derecho según el valor
+        if (temperatura < nodo->temperatura) {
+            nodo->izq = insertarRec(nodo->izq, temperatura);
+        } else if (temperatura > nodo->temperatura) {
+            nodo->der = insertarRec(nodo->der, temperatura);
+        }
+        // Si temperatura == nodo->temperatura, no insertamos (evitamos duplicados)
+        
+        return nodo;
+    }
+    
+    // Método auxiliar recursivo para contar críticos
+    int contarCriticosRec(Nodo* nodo, int umbral) {
+        // Caso base: si el nodo es nullptr, no hay nada que contar
+        if (nodo == nullptr) {
+            return 0;
+        }
+        
+        int contador = 0;
+        
+        // Si la temperatura actual es mayor o igual al umbral, contarla
+        if (nodo->temperatura >= umbral) {
+            contador = 1;
+        }
+        
+        // Contar recursivamente en los subárboles
+        contador += contarCriticosRec(nodo->izq, umbral);
+        contador += contarCriticosRec(nodo->der, umbral);
+        
+        return contador;
+    }
+
+public:
+    // Constructor
+    RegistroSensoresABB() : raiz(nullptr) {}
+    
+    // Destructor para liberar memoria
+    ~RegistroSensoresABB() {
+        destruirArbol(raiz);
+    }
+    
+    void destruirArbol(Nodo* nodo) {
+        if (nodo != nullptr) {
+            destruirArbol(nodo->izq);
+            destruirArbol(nodo->der);
+            delete nodo;
+        }
+    }
+    
+    // Método público para insertar
+    void insertar(int temperatura) {
+        raiz = insertarRec(raiz, temperatura);
+    }
+    
+    // Método público para contar críticos
+    int contarCriticos(int umbral) {
+        return contarCriticosRec(raiz, umbral);
+    }
+    
+    // Método para imprimir críticos en el formato requerido
+    void imprimirCriticos(int umbral) {
+        int cantidad = contarCriticos(umbral);
+        cout << "Sensores criticos (temp >= " << umbral << "): " << cantidad << endl;
+    }
+    
+    // Métodos auxiliares para visualización (opcional, para debugging)
+    void imprimirInOrder() {
+        cout << "Temperaturas en orden: ";
+        imprimirInOrderRec(raiz);
+        cout << endl;
+    }
+    
+private:
+    void imprimirInOrderRec(Nodo* nodo) {
+        if (nodo != nullptr) {
+            imprimirInOrderRec(nodo->izq);
+            cout << nodo->temperatura << " ";
+            imprimirInOrderRec(nodo->der);
+        }
+    }
+};
+
+// Programa de prueba
+int main() {
+    cout << "=== EJERCICIO 1: Registro de Sensores ABB ===" << endl;
+    
+    RegistroSensoresABB registro;
+    
+    // Insertar temperaturas de ejemplo
+    cout << "\nInsertando temperaturas: 25, 30, 20, 35, 22, 28, 40, 15" << endl;
+    registro.insertar(25);
+    registro.insertar(30);
+    registro.insertar(20);
+    registro.insertar(35);
+    registro.insertar(22);
+    registro.insertar(28);
+    registro.insertar(40);
+    registro.insertar(15);
+    
+    // Mostrar árbol en orden
+    registro.imprimirInOrder();
+    
+    // Probar conteo de críticos con diferentes umbrales
+    cout << "\n--- Pruebas de sensores críticos ---" << endl;
+    registro.imprimirCriticos(30);
+    registro.imprimirCriticos(25);
+    registro.imprimirCriticos(40);
+    registro.imprimirCriticos(50);
+    
+    // Casos de prueba adicionales
+    cout << "\n--- Prueba con árbol pequeño ---" << endl;
+    RegistroSensoresABB registro2;
+    registro2.insertar(10);
+    registro2.insertar(20);
+    registro2.insertar(5);
+    registro2.imprimirCriticos(15);
+    
+    return 0;
+}
+
+/* 
+EXPLICACIÓN DE LA SOLUCIÓN:
+
+1. ESTRUCTURA DEL NODO:
+   - Cada nodo tiene: temperatura, puntero izq, puntero der
+   - Constructor para inicializar fácilmente
+
+2. INSERCIÓN (insertarRec):
+   - Recursiva, estilo BST estándar
+   - Menores a la izquierda, mayores a la derecha
+   - O(log n) en promedio, O(n) peor caso
+
+3. CONTAR CRÍTICOS (contarCriticosRec):
+   - Recorre TODO el árbol (todos los nodos)
+   - Si temperatura >= umbral, suma 1
+   - Suma recursivamente subárbol izq + subárbol der
+   - Complejidad: O(n) - debe visitar todos los nodos
+
+4. IMPRIMIR CRÍTICOS:
+   - Llama a contarCriticos
+   - Formatea la salida según lo pedido
+
+ANÁLISIS DE COMPLEJIDAD:
+- insertar: O(log n) promedio
+- contarCriticos: O(n) - debe revisar todo el árbol
+- imprimirCriticos: O(n) - llama a contarCriticos
+
+CASOS EDGE A CONSIDERAR:
+- Árbol vacío (raiz == nullptr)
+- Umbral mayor que todas las temperaturas
+- Umbral menor que todas las temperaturas
+- Todos los valores iguales al umbral
+*/

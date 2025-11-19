@@ -1,0 +1,189 @@
+#include <iostream>
+#include <map>
+#include <vector>
+#include <string>
+#include <set>
+#include <algorithm>
+
+using namespace std;
+
+class RedDeSensores {
+private:
+    map<string, vector<string>> grafo;
+
+public:
+    // Agrega una conexión bidireccional entre dos módulos
+    void agregarConexion(const string& a, const string& b) {
+        // Agregar b a la lista de adyacencia de a
+        grafo[a].push_back(b);
+        
+        // Agregar a a la lista de adyacencia de b (bidireccional)
+        grafo[b].push_back(a);
+    }
+
+    // Devuelve true si existe conexión directa entre a y b
+    bool estanConectados(const string& a, const string& b) {
+        // Verificar si 'a' existe en el grafo
+        if (grafo.find(a) == grafo.end()) {
+            return false;
+        }
+        
+        // Buscar 'b' en la lista de adyacencia de 'a'
+        vector<string>& vecinos = grafo[a];
+        return find(vecinos.begin(), vecinos.end(), b) != vecinos.end();
+    }
+
+    // Devuelve cuántos módulos son alcanzables desde el módulo de inicio (incluido)
+    int alcanzablesDesde(const string& inicio) {
+        // Verificar que el nodo inicio existe
+        if (grafo.find(inicio) == grafo.end()) {
+            return 0;
+        }
+        
+        // Conjunto para marcar nodos visitados
+        set<string> visitados;
+        
+        // Realizar DFS desde el nodo inicio
+        dfs(inicio, visitados);
+        
+        // Retornar la cantidad de nodos visitados
+        return visitados.size();
+    }
+
+private:
+    void dfs(const string& actual, set<string>& visitados) {
+        // Marcar el nodo actual como visitado
+        visitados.insert(actual);
+        
+        // Si el nodo actual no tiene vecinos, terminar
+        if (grafo.find(actual) == grafo.end()) {
+            return;
+        }
+        
+        // Recorrer todos los vecinos del nodo actual
+        for (const string& vecino : grafo[actual]) {
+            // Si el vecino no ha sido visitado, hacer DFS recursivo
+            if (visitados.find(vecino) == visitados.end()) {
+                dfs(vecino, visitados);
+            }
+        }
+    }
+    
+public:
+    // Método auxiliar para imprimir el grafo (debugging)
+    void imprimirGrafo() {
+        cout << "\n=== Estructura del Grafo ===" << endl;
+        for (const auto& par : grafo) {
+            cout << par.first << " -> ";
+            for (const string& vecino : par.second) {
+                cout << vecino << " ";
+            }
+            cout << endl;
+        }
+    }
+};
+
+// Programa de prueba
+int main() {
+    cout << "=== EJERCICIO 2: Red de Sensores (Grafos) ===" << endl;
+    
+    RedDeSensores red;
+    
+    // Construir red de ejemplo
+    cout << "\nCreando red de sensores..." << endl;
+    red.agregarConexion("sensor1", "sensor2");
+    red.agregarConexion("sensor1", "sensor3");
+    red.agregarConexion("sensor2", "sensor4");
+    red.agregarConexion("sensor3", "sensor4");
+    red.agregarConexion("sensor4", "sensor5");
+    red.agregarConexion("sensor6", "sensor7");  // Componente separado
+    
+    red.imprimirGrafo();
+    
+    // Probar estanConectados
+    cout << "\n--- Prueba de conexiones directas ---" << endl;
+    cout << "¿sensor1 y sensor2 están conectados? " 
+         << (red.estanConectados("sensor1", "sensor2") ? "SÍ" : "NO") << endl;
+    cout << "¿sensor1 y sensor4 están conectados? " 
+         << (red.estanConectados("sensor1", "sensor4") ? "SÍ" : "NO") << endl;
+    cout << "¿sensor1 y sensor6 están conectados? " 
+         << (red.estanConectados("sensor1", "sensor6") ? "SÍ" : "NO") << endl;
+    
+    // Probar alcanzablesDesde
+    cout << "\n--- Prueba de alcanzabilidad (DFS) ---" << endl;
+    cout << "Módulos alcanzables desde sensor1: " 
+         << red.alcanzablesDesde("sensor1") << endl;
+    cout << "Módulos alcanzables desde sensor4: " 
+         << red.alcanzablesDesde("sensor4") << endl;
+    cout << "Módulos alcanzables desde sensor6: " 
+         << red.alcanzablesDesde("sensor6") << endl;
+    cout << "Módulos alcanzables desde sensor_inexistente: " 
+         << red.alcanzablesDesde("sensor_inexistente") << endl;
+    
+    // Caso de prueba: red lineal
+    cout << "\n--- Prueba con red lineal ---" << endl;
+    RedDeSensores redLineal;
+    redLineal.agregarConexion("A", "B");
+    redLineal.agregarConexion("B", "C");
+    redLineal.agregarConexion("C", "D");
+    cout << "Alcanzables desde A (red lineal): " 
+         << redLineal.alcanzablesDesde("A") << endl;
+    
+    // Caso de prueba: red completamente conectada
+    cout << "\n--- Prueba con red completamente conectada ---" << endl;
+    RedDeSensores redCompleta;
+    redCompleta.agregarConexion("X", "Y");
+    redCompleta.agregarConexion("X", "Z");
+    redCompleta.agregarConexion("Y", "Z");
+    cout << "Alcanzables desde X (red completa): " 
+         << redCompleta.alcanzablesDesde("X") << endl;
+    
+    return 0;
+}
+
+/*
+EXPLICACIÓN DE LA SOLUCIÓN:
+
+1. REPRESENTACIÓN DEL GRAFO:
+   - map<string, vector<string>>
+   - Cada nodo (string) mapea a su lista de vecinos
+   - Grafo NO DIRIGIDO (bidireccional)
+
+2. agregarConexion(a, b):
+   - Agrega b a la lista de a
+   - Agrega a a la lista de b
+   - Complejidad: O(1) amortizado
+
+3. estanConectados(a, b):
+   - Verifica si b está en la lista de vecinos de a
+   - Usa find() de STL
+   - Complejidad: O(k) donde k = número de vecinos de a
+
+4. alcanzablesDesde(inicio):
+   - Inicia DFS desde el nodo inicio
+   - Usa set<string> para marcar visitados
+   - Retorna tamaño del set
+   - Complejidad: O(V + E) donde V=vértices, E=aristas
+
+5. dfs(actual, visitados):
+   - Marca el nodo actual como visitado
+   - Recursivamente visita todos los vecinos no visitados
+   - Implementación recursiva estándar de DFS
+
+ANÁLISIS DE COMPLEJIDAD:
+- agregarConexion: O(1)
+- estanConectados: O(grado del nodo)
+- alcanzablesDesde: O(V + E)
+- dfs: O(V + E)
+
+CASOS EDGE:
+- Nodo que no existe en el grafo
+- Componentes desconectadas
+- Grafo vacío
+- Un solo nodo
+- Ciclos (manejados por el set visitados)
+
+DIFERENCIA CON GRAFO DIRIGIDO:
+- En dirigido: solo agregaríamos grafo[a].push_back(b)
+- En no dirigido: agregamos en ambas direcciones
+*/

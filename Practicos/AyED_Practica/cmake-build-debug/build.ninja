@@ -412,6 +412,37 @@ build complejidad: CXX_EXECUTABLE_LINKER__complejidad_Debug CMakeFiles/complejid
   TARGET_FILE = complejidad
   TARGET_PDB = complejidad.dbg
 
+# =============================================================================
+# Object build statements for EXECUTABLE target ncuadrado
+
+
+#############################################
+# Order-only phony target for ncuadrado
+
+build cmake_object_order_depends_target_ncuadrado: phony || .
+
+build CMakeFiles/ncuadrado.dir/05_AlgoritmosDeOrdenamiento/ncuadrado.cpp.o: CXX_COMPILER__ncuadrado_unscanned_Debug /home/facuh/Documents/Alumno/IngComputacion/AYED/Practicos/AyED_Practica/05_AlgoritmosDeOrdenamiento/ncuadrado.cpp || cmake_object_order_depends_target_ncuadrado
+  DEP_FILE = CMakeFiles/ncuadrado.dir/05_AlgoritmosDeOrdenamiento/ncuadrado.cpp.o.d
+  FLAGS = -g -std=gnu++17 -fdiagnostics-color=always
+  OBJECT_DIR = CMakeFiles/ncuadrado.dir
+  OBJECT_FILE_DIR = CMakeFiles/ncuadrado.dir/05_AlgoritmosDeOrdenamiento
+
+
+# =============================================================================
+# Link build statements for EXECUTABLE target ncuadrado
+
+
+#############################################
+# Link the executable ncuadrado
+
+build ncuadrado: CXX_EXECUTABLE_LINKER__ncuadrado_Debug CMakeFiles/ncuadrado.dir/05_AlgoritmosDeOrdenamiento/ncuadrado.cpp.o
+  FLAGS = -g
+  OBJECT_DIR = CMakeFiles/ncuadrado.dir
+  POST_BUILD = :
+  PRE_LINK = :
+  TARGET_FILE = ncuadrado
+  TARGET_PDB = ncuadrado.dbg
+
 
 #############################################
 # Utility command for edit_cache
@@ -446,7 +477,7 @@ build rebuild_cache: phony CMakeFiles/rebuild_cache.util
 #############################################
 # Folder: /home/facuh/Documents/Alumno/IngComputacion/AYED/Practicos/AyED_Practica/cmake-build-debug
 
-build all: phony laboratorio punteros_basicos paso_parametros memoria_dinamica aritmetica_punteros conceptos_basicos constructores herencia cola lista pila complejidad
+build all: phony laboratorio punteros_basicos paso_parametros memoria_dinamica aritmetica_punteros conceptos_basicos constructores herencia cola lista pila complejidad ncuadrado
 
 # =============================================================================
 # Built-in targets
